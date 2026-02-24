@@ -1,0 +1,146 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Appointment Manager Frontend Implementation",
+  "requirements": [
+    {
+      "id": "REQ-3",
+      "summary": "Create a calendar view interface showing appointments by date with visual indicators for upcoming appointments",
+      "acceptanceCriteria": [
+        "Calendar displays current month with all dates",
+        "Dates with appointments are visually distinguished",
+        "Users can navigate between months",
+        "Clicking a date shows appointments for that day"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/CalendarView.tsx",
+          "operation": "create",
+          "description": "Create a calendar component that displays the current month in a grid layout, highlights dates with appointments using visual indicators (colored dots or badges), provides navigation buttons for previous/next month, and allows clicking dates to filter appointments. Use the shadcn-ui component library for UI elements like buttons and cards. Apply the warm neutral color scheme (beige, cream, soft gray) with sage green accents for appointment indicators."
+        },
+        {
+          "path": "frontend/src/hooks/useAppointments.ts",
+          "operation": "create",
+          "description": "Create a custom React hook that fetches all appointments from the backend using getAllAppointments(), provides state management for appointments list, handles loading and error states, and exposes methods for create, update, and delete operations. This hook will be the primary data layer for all appointment-related components."
+        },
+        {
+          "path": "frontend/src/utils/dateHelpers.ts",
+          "operation": "create",
+          "description": "Create utility functions for date manipulation including: converting backend Time (bigint nanoseconds) to JavaScript Date objects, formatting dates for display, grouping appointments by date, checking if dates have appointments, and handling timezone conversions to account for user's local timezone as per project constraints."
+        }
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "summary": "Build an appointment creation and editing form with inputs for title, description, date picker, time picker, duration selector, and alarm settings",
+      "acceptanceCriteria": [
+        "Form includes all required input fields",
+        "Date and time pickers are user-friendly",
+        "Form validates all inputs before submission",
+        "Users can save new appointments or update existing ones"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/AppointmentForm.tsx",
+          "operation": "create",
+          "description": "Create a comprehensive appointment form component that includes input fields for title (text), description (textarea), date picker, time picker, duration selector (dropdown or number input in minutes), alarm enabled checkbox, and alarm offset selector (e.g., 15 minutes, 30 minutes, 1 hour before). Use shadcn-ui form components for consistent styling. Implement form validation to ensure all required fields are filled and dates/times are valid. Support both create and edit modes by accepting an optional appointment prop. On submit, convert date/time to backend Time format (bigint nanoseconds) and call createAppointment() or updateAppointment() from the backend interface. Use the warm neutral color scheme for form styling."
+        }
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "summary": "Display a list view of all appointments sorted chronologically with options to filter by date range or search by title",
+      "acceptanceCriteria": [
+        "List shows all appointments in chronological order",
+        "Each appointment displays key information (title, date, time)",
+        "Users can filter appointments by date range",
+        "Users can search appointments by title",
+        "Clicking an appointment opens details or edit view"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/AppointmentList.tsx",
+          "operation": "create",
+          "description": "Create an appointment list component that displays all appointments in chronological order using a card-based layout with subtle shadows. Each card shows title, formatted date and time, and duration. Include filter controls for date range selection and a search input for filtering by title. Implement local filtering logic that works with the appointments fetched from useAppointments hook. Make each appointment card clickable to open an edit dialog or navigate to a detail view. Use shadcn-ui card components and apply the warm neutral color palette with sage green accents for interactive elements."
+        },
+        {
+          "path": "frontend/src/components/AppointmentDialog.tsx",
+          "operation": "create",
+          "description": "Create a dialog component that displays appointment details and allows editing. This dialog should contain the AppointmentForm component and provide options to save changes or delete the appointment. Use shadcn-ui Dialog component for the modal interface. Include delete confirmation to prevent accidental deletions. Style with the professional color scheme and ensure proper spacing."
+        }
+      ]
+    },
+    {
+      "id": "REQ-6",
+      "summary": "Implement alarm functionality that checks for upcoming appointments and displays notifications when alarm time is reached",
+      "acceptanceCriteria": [
+        "System checks for upcoming appointments based on alarm settings",
+        "Visual notifications appear when alarm triggers",
+        "Users can configure alarm timing (e.g., 15 minutes before, 1 hour before)",
+        "Notifications display appointment title and time"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/hooks/useAlarmNotifications.ts",
+          "operation": "create",
+          "description": "Create a custom hook that implements browser-based alarm functionality. Use setInterval to periodically check for appointments whose alarm time has been reached (calculated from appointment date minus alarmOffset). When an alarm triggers, display a visual notification component within the app (no push notifications as per constraints). Track which alarms have already fired to prevent duplicate notifications. Handle timezone conversions to ensure accurate alarm timing based on user's local timezone."
+        },
+        {
+          "path": "frontend/src/components/NotificationToast.tsx",
+          "operation": "create",
+          "description": "Create a toast notification component that displays alarm alerts with appointment title and time. Use shadcn-ui Toast component for consistent styling. Position toasts in a non-intrusive location (e.g., top-right corner). Include dismiss functionality. Style with muted teal accent color to distinguish alarm notifications from regular UI elements. Reference the generated alarm icon at frontend/public/assets/generated/alarm-icon.dim_128x128.png in the toast for visual emphasis."
+        }
+      ]
+    },
+    {
+      "id": "REQ-7",
+      "summary": "Create a dashboard view showing today's appointments, upcoming appointments in the next 7 days, and statistics",
+      "acceptanceCriteria": [
+        "Dashboard displays appointments for today prominently",
+        "Upcoming appointments for the next week are visible",
+        "Statistics show useful metrics about appointments",
+        "Dashboard provides quick access to create new appointment"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/Dashboard.tsx",
+          "operation": "create",
+          "description": "Create a dashboard component that serves as the main view of the application. Display today's appointments in a prominent section at the top, show upcoming appointments for the next 7 days in a separate section, and include statistics cards showing total appointments and upcoming count. Add a prominent 'Create Appointment' button that opens the AppointmentForm dialog. Use card-based layouts with subtle shadows for each section. Apply the warm neutral color scheme with sage green accents for the create button. Use the generated calendar icon at frontend/public/assets/generated/calendar-icon.dim_128x128.png in the statistics or header section for visual branding."
+        },
+        {
+          "path": "frontend/src/components/StatisticsCards.tsx",
+          "operation": "create",
+          "description": "Create a statistics component that calculates and displays metrics from the appointments data: total appointments count and upcoming appointments count (next 7 days). Use shadcn-ui Card components with clean typography and the warm neutral color palette. Make the cards visually distinct but cohesive with the overall design."
+        }
+      ]
+    },
+    {
+      "id": "REQ-8",
+      "summary": "Apply a cohesive visual design with a professional, organized aesthetic using warm neutrals with sage green or muted teal accents",
+      "acceptanceCriteria": [
+        "Color scheme is consistently applied across all views",
+        "Typography is readable and hierarchically organized",
+        "Layout feels organized and professional",
+        "UI elements have consistent spacing and styling",
+        "Calendar and time elements are prominent in the design"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/index.css",
+          "operation": "modify",
+          "description": "Update the global stylesheet to define the warm neutral color palette as CSS variables: beige (#F5F1E8), cream (#FAF8F3), soft gray (#E8E6E1) as base colors, and sage green (#9CA986) or muted teal (#6B9A9E) as accent colors. Configure these colors in both light and dark mode variants. Set base typography using clean sans-serif fonts with proper font weight hierarchy. Define consistent spacing scale and shadow utilities for card-based layouts. Apply calendar-inspired visual styling for date/time elements."
+        },
+        {
+          "path": "frontend/tailwind.config.js",
+          "operation": "modify",
+          "description": "Extend the Tailwind configuration to include custom colors matching the warm neutral palette: define 'warmBeige', 'warmCream', 'softGray', 'sageGreen', and 'mutedTeal' in the theme colors. Configure typography plugin settings for professional text hierarchy. Add custom box-shadow utilities for subtle card shadows. Ensure the configuration supports the design requirements for a cohesive, calendar-focused aesthetic."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Set up the main application structure with routing between Dashboard, CalendarView, and AppointmentList views. Integrate the useAlarmNotifications hook at the app level to enable alarm checking across all views. Create a navigation layout component or header that allows switching between main views. Initialize the useAppointments hook at the app level and pass appointment data down through context or props. Apply consistent layout styling with the warm neutral background colors. Ensure the NotificationToast component is rendered at the app level for global notifications."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,118 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-create-a-calendar-view-interface-showing-appointments-by-date-with-visual-indicators-for-upcoming-appointments",
+      "featureTitle": "Create a calendar view interface showing appointments by date with visual indicators for upcoming appointments",
+      "files": [
+        "frontend/src/components/CalendarView.tsx",
+        "frontend/src/utils/dateHelpers.ts"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-3"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-build-an-appointment-creation-and-editing-form-with-inputs-for-title-description-date-picker-time-picker-duration-selector-and-alarm-settings",
+      "featureTitle": "Build an appointment creation and editing form with inputs for title, description, date picker, time picker, duration selector, and alarm settings",
+      "files": [
+        "frontend/src/components/AppointmentForm.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-4"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-display-a-list-view-of-all-appointments-sorted-chronologically-with-options-to-filter-by-date-range-or-search-by-title",
+      "featureTitle": "Display a list view of all appointments sorted chronologically with options to filter by date range or search by title",
+      "files": [
+        "frontend/src/components/AppointmentDialog.tsx",
+        "frontend/src/components/AppointmentList.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-5"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-implement-alarm-functionality-that-checks-for-upcoming-appointments-and-displays-notifications-when-alarm-time-is-reached",
+      "featureTitle": "Implement alarm functionality that checks for upcoming appointments and displays notifications when alarm time is reached",
+      "files": [
+        "frontend/src/hooks/useAlarmNotifications.ts"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-6"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-create-a-dashboard-view-showing-today-s-appointments-upcoming-appointments-in-the-next-7-days-and-statistics-total-appointments-upcoming-count",
+      "featureTitle": "Create a dashboard view showing today's appointments, upcoming appointments in the next 7 days, and statistics (total appointments, upcoming count)",
+      "files": [
+        "frontend/src/components/Dashboard.tsx",
+        "frontend/src/components/StatisticsCards.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-7"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-apply-a-cohesive-visual-design-with-a-professional-organized-aesthetic-using-warm-neutrals-beige-cream-soft-gray-as-the-base-palette-with-sage-green-or-muted-teal-accents-clean-sans-serif-typography-card-based-layouts-with-subtle-shadows-and-calendar-inspired-visual-elements",
+      "featureTitle": "Apply a cohesive visual design with a professional, organized aesthetic using warm neutrals (beige, cream, soft gray) as the base palette with sage green or muted teal accents, clean sans-serif typography, card-based layouts with subtle shadows, and calendar-inspired visual elements",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/index.css",
+        "frontend/tailwind.config.js"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-8"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

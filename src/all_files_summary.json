@@ -1,0 +1,23 @@
+{
+  "backend/main.mo": "Motoko actor implementing CRUD operations for appointments with fields for title, description, date, duration, and alarm settings. Stores appointments in a Map and provides query/update functions sorted by date.",
+  "feature_evidence.json": "Feature evidence report documenting implemented features including calendar view, appointment form, list view, alarm notifications, and dashboard with associated files and test IDs.",
+  "frontend-file-summaries.txt": "JSON-formatted summaries of all frontend source files describing their purpose and functionality.",
+  "frontend/index.css": "Tailwind CSS configuration with custom OKLCH color variables for light and dark themes using warm neutrals (beige, cream, soft gray) and sage green/muted teal accents.",
+  "frontend/index.html": "HTML entry point for the Appointment Manager application with root div and module script reference.",
+  "frontend/src/App.tsx": "Main React application component with navigation between Dashboard, Calendar, and List views, integrating theme provider, alarm notifications, and header/footer layout.",
+  "frontend/src/components/AppointmentDialog.tsx": "Dialog component wrapping AppointmentForm for creating/editing appointments with delete confirmation alert dialog functionality.",
+  "frontend/src/components/AppointmentForm.tsx": "Comprehensive form component with validation for creating/editing appointments including title, description, date/time pickers, duration selector, and alarm settings with offset configuration.",
+  "frontend/src/components/AppointmentList.tsx": "Displays a searchable, sortable list of all appointments with filtering by title/description. Clicking an appointment opens an AppointmentDialog for viewing/editing details.",
+  "frontend/src/components/CalendarView.tsx": "Renders a monthly calendar grid with navigation controls, showing appointments on each date. Allows selecting dates to view appointments and clicking appointments to open details in a dialog.",
+  "frontend/src/components/Dashboard.tsx": "Main dashboard view displaying statistics cards, today's appointments, and upcoming appointments for the next 7 days. Includes a button to create new appointments.",
+  "frontend/src/components/StatisticsCards.tsx": "Displays two summary cards showing total appointment count and upcoming appointments count for the next 7 days.",
+  "frontend/src/hooks/useActor.ts": "React Query hook that creates and manages the backend actor instance based on Internet Identity authentication state. Invalidates dependent queries when the actor changes.",
+  "frontend/src/hooks/useAlarmNotifications.ts": "Monitors appointments and triggers toast notifications when alarm times are reached based on appointment alarm settings. Checks every 30 seconds and tracks fired alarms to prevent duplicates.",
+  "frontend/src/hooks/useInternetIdentity.ts": "Provides Internet Identity authentication context and hooks for login/logout functionality using @dfinity/auth-client. Manages authentication state, identity persistence, and login status.",
+  "frontend/src/hooks/useQueries.ts": "Defines React Query hooks for CRUD operations on appointments including getAllAppointments, getAppointment, createAppointment, updateAppointment, and deleteAppointment with automatic cache invalidation.",
+  "frontend/src/index.css": "Tailwind CSS configuration with custom CSS variables defining a warm neutral color scheme (sage green, cream, beige, teal) for both light and dark modes, including primary, secondary, accent, and chart colors.",
+  "frontend/src/main.tsx": "React application entry point that sets up the root component with QueryClient for data fetching and InternetIdentityProvider for authentication.",
+  "frontend/src/utils/dateHelpers.ts": "Utility functions for date/time operations including conversion between Time and Date types, formatting dates/times, checking if dates are the same day, generating calendar month days, and identifying today/upcoming dates.",
+  "frontend/tailwind.config.js": "Tailwind configuration extending the default theme with custom colors using OKLCH color space, border radius variables, box shadows, and animation keyframes for accordions and other UI elements.",
+  "project_state.json": "Project metadata tracking an appointment management application with calendar, alarm, and time management features, including existing implemented features and pending feature requests for CRUD operations and UI components."
+}

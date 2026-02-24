@@ -1,0 +1,99 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 3,
+  "summary": "An application for managing appointments and time with alarm functionality",
+  "architectural_notes": [],
+  "known_issues": [],
+  "isFixRequest": false,
+  "imageRequirements": "## Required Images\n- Clean calendar icon illustration with minimal design in sage green on cream background (calendar-icon.dim_128x128.png)\n- Clock/alarm icon illustration with modern styling in muted teal (alarm-icon.dim_128x128.png)",
+  "existing_features": [
+    {
+      "id": "feature-create-a-calendar-view-interface-showing-appointments-by-date-with-visual-indicators-for-upcoming-appointments",
+      "title": "Create a calendar view interface showing appointments by date with visual indicators for upcoming appointments",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-an-appointment-creation-and-editing-form-with-inputs-for-title-description-date-picker-time-picker-duration-selector-and-alarm-settings",
+      "title": "Build an appointment creation and editing form with inputs for title, description, date picker, time picker, duration selector, and alarm settings",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-display-a-list-view-of-all-appointments-sorted-chronologically-with-options-to-filter-by-date-range-or-search-by-title",
+      "title": "Display a list view of all appointments sorted chronologically with options to filter by date range or search by title",
+      "reqIds": [
+        "REQ-5"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-alarm-functionality-that-checks-for-upcoming-appointments-and-displays-notifications-when-alarm-time-is-reached",
+      "title": "Implement alarm functionality that checks for upcoming appointments and displays notifications when alarm time is reached",
+      "reqIds": [
+        "REQ-6"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-a-dashboard-view-showing-today-s-appointments-upcoming-appointments-in-the-next-7-days-and-statistics-total-appointments-upcoming-count",
+      "title": "Create a dashboard view showing today's appointments, upcoming appointments in the next 7 days, and statistics (total appointments, upcoming count)",
+      "reqIds": [
+        "REQ-7"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-apply-a-cohesive-visual-design-with-a-professional-organized-aesthetic-using-warm-neutrals-beige-cream-soft-gray-as-the-base-palette-with-sage-green-or-muted-teal-accents-clean-sans-serif-typography-card-based-layouts-with-subtle-shadows-and-calendar-inspired-visual-elements",
+      "title": "Apply a cohesive visual design with a professional, organized aesthetic using warm neutrals (beige, cream, soft gray) as the base palette with sage green or muted teal accents, clean sans-serif typography, card-based layouts with subtle shadows, and calendar-inspired visual elements",
+      "reqIds": [
+        "REQ-8"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "Appointment management system",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-2",
+      "summary": "Time management features",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-3",
+      "summary": "Alarm/notification system",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-4",
+      "summary": "Create a data model for appointments with fields: title, description, date, time, duration, and alarm settings",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-5",
+      "summary": "Implement CRUD operations for appointments: create new appointment, retrieve all appointments, retrieve single appointment by ID, update existing appointment, and delete appointment",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "status": "pending"
+    }
+  ],
+  "gameProjectType": "none",
+  "projectName": "Appointment Manager",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}

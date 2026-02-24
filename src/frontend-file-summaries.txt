@@ -1,0 +1,14 @@
+{
+  "frontend/src/App.tsx": "Main application component with navigation between Dashboard, Calendar, and List views, integrates alarm notifications and theme provider.",
+  "frontend/src/hooks/useQueries.ts": "React Query hooks for all backend operations including getAllAppointments, createAppointment, updateAppointment, and deleteAppointment with automatic cache invalidation.",
+  "frontend/src/hooks/useAlarmNotifications.ts": "Custom hook that periodically checks for upcoming appointments and displays toast notifications when alarm time is reached, using sonner's simple toast API.",
+  "frontend/src/utils/dateHelpers.ts": "Utility functions for converting between backend Time (bigint nanoseconds) and JavaScript Date objects, formatting dates/times, and date comparison operations.",
+  "frontend/src/components/Dashboard.tsx": "Dashboard view displaying today's appointments, upcoming appointments for the next 7 days, and statistics with quick access to create new appointments.",
+  "frontend/src/components/StatisticsCards.tsx": "Statistics component showing total appointments count and upcoming appointments count in card format.",
+  "frontend/src/components/CalendarView.tsx": "Calendar component displaying monthly grid view with appointment indicators, date selection, and appointment details for selected dates.",
+  "frontend/src/components/AppointmentList.tsx": "List view of all appointments with search functionality, chronological sorting, and detailed appointment cards.",
+  "frontend/src/components/AppointmentDialog.tsx": "Dialog wrapper component for creating/editing appointments with delete confirmation functionality.",
+  "frontend/src/components/AppointmentForm.tsx": "Comprehensive form component for creating and editing appointments with validation, date/time pickers, duration selector, and alarm settings.",
+  "frontend/src/index.css": "Global styles with warm neutral OKLCH color palette (beige, cream, soft gray) and sage green/muted teal accents for both light and dark modes.",
+  "frontend/tailwind.config.js": "Tailwind configuration with custom warm neutral color palette, sage green and muted teal accent colors, enhanced shadows, and Inter font family."
+}

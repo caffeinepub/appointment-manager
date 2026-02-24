@@ -1,0 +1,157 @@
+{
+  "kind": "build_request",
+  "title": "Create appointment management app with time tracking and alarms",
+  "projectName": "Appointment Manager",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "text": "Create a data model for appointments with fields: title, description, date, time, duration, and alarm settings",
+      "target": "backend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Appointments can be stored with all required fields",
+        "Each appointment has a unique identifier",
+        "Date and time are stored in a structured format"
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "text": "Implement CRUD operations for appointments: create new appointment, retrieve all appointments, retrieve single appointment by ID, update existing appointment, and delete appointment",
+      "target": "backend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Users can create appointments with all fields",
+        "Users can view a list of all their appointments",
+        "Users can view details of a specific appointment",
+        "Users can update appointment information",
+        "Users can delete appointments"
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "text": "Create a calendar view interface showing appointments by date with visual indicators for upcoming appointments",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Calendar displays current month with all dates",
+        "Dates with appointments are visually distinguished",
+        "Users can navigate between months",
+        "Clicking a date shows appointments for that day"
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "text": "Build an appointment creation and editing form with inputs for title, description, date picker, time picker, duration selector, and alarm settings",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Form includes all required input fields",
+        "Date and time pickers are user-friendly",
+        "Form validates all inputs before submission",
+        "Users can save new appointments or update existing ones"
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "text": "Display a list view of all appointments sorted chronologically with options to filter by date range or search by title",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ]
+      },
+      "acceptanceCriteria": [
+        "List shows all appointments in chronological order",
+        "Each appointment displays key information (title, date, time)",
+        "Users can filter appointments by date range",
+        "Users can search appointments by title",
+        "Clicking an appointment opens details or edit view"
+      ]
+    },
+    {
+      "id": "REQ-6",
+      "text": "Implement alarm functionality that checks for upcoming appointments and displays notifications when alarm time is reached",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ]
+      },
+      "acceptanceCriteria": [
+        "System checks for upcoming appointments based on alarm settings",
+        "Visual notifications appear when alarm triggers",
+        "Users can configure alarm timing (e.g., 15 minutes before, 1 hour before)",
+        "Notifications display appointment title and time"
+      ]
+    },
+    {
+      "id": "REQ-7",
+      "text": "Create a dashboard view showing today's appointments, upcoming appointments in the next 7 days, and statistics (total appointments, upcoming count)",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Dashboard displays appointments for today prominently",
+        "Upcoming appointments for the next week are visible",
+        "Statistics show useful metrics about appointments",
+        "Dashboard provides quick access to create new appointment"
+      ]
+    },
+    {
+      "id": "REQ-8",
+      "text": "Apply a cohesive visual design with a professional, organized aesthetic using warm neutrals (beige, cream, soft gray) as the base palette with sage green or muted teal accents, clean sans-serif typography, card-based layouts with subtle shadows, and calendar-inspired visual elements",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Color scheme is consistently applied across all views",
+        "Typography is readable and hierarchically organized",
+        "Layout feels organized and professional",
+        "UI elements have consistent spacing and styling",
+        "Calendar and time elements are prominent in the design"
+      ]
+    }
+  ],
+  "constraints": [
+    "All appointments must be persisted in the backend",
+    "Alarm notifications must work within browser capabilities (no push notifications)",
+    "Time and date handling must account for user's local timezone"
+  ],
+  "nonGoals": [
+    "Integration with external calendar services (Google Calendar, Outlook)",
+    "Multi-user collaboration or shared calendars",
+    "Recurring appointment patterns",
+    "Email or SMS notifications",
+    "Mobile app development"
+  ],
+  "imageRequirements": {
+    "required": [
+      "Clean calendar icon illustration with minimal design in sage green on cream background (calendar-icon.dim_128x128.png)",
+      "Clock/alarm icon illustration with modern styling in muted teal (alarm-icon.dim_128x128.png)"
+    ],
+    "edits": []
+  }
+}
